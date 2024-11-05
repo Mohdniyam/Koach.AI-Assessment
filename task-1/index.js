@@ -5,7 +5,11 @@ module.exports.handler = async (event) => {
     if (!event.body) throw new Error("Request body is missing");
 
     const data = JSON.parse(event.body);
+
+    // initialising backet name
     const bucketName = 'task-1-json-storage-bucket';
+
+    // set randam key
     const key = `${Date.now()}-${Math.floor(Math.random() * 100000)}.json`;
 
     const params = {
